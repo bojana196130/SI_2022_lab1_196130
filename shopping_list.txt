@@ -1,5 +1,5 @@
-Hrana
-Shminki
-Pijaloci
-Sok
-Parfem
+Hrana *3
+Shminki *4
+Pijaloci *2
+Sok *2
+Parfem *3
