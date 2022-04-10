@@ -1,0 +1,224 @@
+Прва лабараториска вежба по Софтверско инженерство-196130
+
+4.
+Откако го креирав репозиториумот, го клонирав истиот со комантадата git clone 
+ и копија од линкот од мојот git. 
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git clone https://github.com/bojana196130/SI_2022_lab1_196130.git
+Cloning into 'SI_2022_lab1_196130'...
+warning: You appear to have cloned an empty repository.
+
+5. 
+За да поставам 5 елементи во текстуалната датотека морав повторно да се најавам
+со мојот меил од github а тоа изгледаше вака:
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git commit -am 'Add 5 items to the shopping list'
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'user@DESKTOP-PNU5M2H.(none)')
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git config --global user.email 'bojana.jovanovska@students.finki.ukim.mk'
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git config --global user.name 'bojana196130'
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git commit -am 'Add 5 items to the shopping list'
+On branch master
+
+
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git add shopping_list.txt
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   shopping_list.txt
+
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git commit shopping_list.txt -m 'Add 5 items to the shopping list'
+[master (root-commit) 5156ab7] Add 5 items to the shopping list
+ 1 file changed, 5 insertions(+)
+ create mode 100644 shopping_list.txt
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+
+
+6.
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git commit -am 'Add quantities to the items'
+[master b08e278] Add quantities to the items
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+ 
+7.
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git branch branch1
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git branch branch2
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git branch
+  branch1
+  branch2
+* master
+
+8.
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git log
+commit 5156ab7aa96dd534874993521b55931d921d52cb (HEAD -> master)
+Author: bojana196130 <bojana.jovanovska@students.finki.ukim.mk>
+Date:   Sat Apr 2 19:51:18 2022 +0200
+
+    Add 5 items to the shopping list
+
+9.
+Во 9тиот чекор се што досега работевме може да се види на оддалечениот 
+репозиториум
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git push origin master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 567 bytes | 40.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/bojana196130/SI_2022_lab1_196130.git
+ * [new branch]      master -> master
+
+10.
+Сега сме на branch1.
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git checkout branch1
+Switched to branch 'branch1'
+
+11.Ја сменав количината на 5тата ставка 
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (branch1)
+$ git commit -am 'Change quantity of item #5'
+On branch branch1
+nothing to commit, working tree clean
+
+12. Сега сме на master
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (branch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+
+13.
+
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git commit -am 'Change quantity of item #2'
+[master 0606a3b] Change quantity of item #2
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+14.
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 320 bytes | 320.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/bojana196130/SI_2022_lab1_196130.git
+   b08e278..0606a3b  master -> master
+15.
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (master)
+$ git checkout branch2
+Switched to branch 'branch2'
+
+16.
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (branch2)
+$ git commit -am 'Modify item #4'
+[branch2 d78d110] Modify item #4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+17.
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (branch2)
+$ git log
+commit d78d1102101cff3fa6ccf790fa0cf30820429468 (HEAD -> branch2)
+Author: bojana196130 <bojana.jovanovska@students.finki.ukim.mk>
+Date:   Sun Apr 10 18:23:43 2022 +0200
+
+    Modify item #4
+
+commit b08e27884eb9bf28a2fe66703170ba4096024f96 (branch1)
+Author: bojana196130 <bojana.jovanovska@students.finki.ukim.mk>
+Date:   Sat Apr 2 19:54:54 2022 +0200
+
+    Add quantities to the items
+
+commit 5156ab7aa96dd534874993521b55931d921d52cb
+Author: bojana196130 <bojana.jovanovska@students.finki.ukim.mk>
+Date:   Sat Apr 2 19:51:18 2022 +0200
+
+    Add 5 items to the shopping list
+18.
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (branch2)
+$ git commit -am 'Modify item #4 and add item #6'
+[branch2 2868973] Modify item #4 and add item #6
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+19.
+user@DESKTOP-PNU5M2H MINGW64 ~/Desktop/SI_2022_lab1_196130 (branch2)
+$ git log
+commit 2868973c5747db591c7e7960450fdd1b223344f3 (HEAD -> branch2)
+Author: bojana196130 <bojana.jovanovska@students.finki.ukim.mk>
+Date:   Sun Apr 10 18:26:41 2022 +0200
+
+    Modify item #4 and add item #6
+
+commit d78d1102101cff3fa6ccf790fa0cf30820429468
+Author: bojana196130 <bojana.jovanovska@students.finki.ukim.mk>
+Date:   Sun Apr 10 18:23:43 2022 +0200
+
+    Modify item #4
+
+commit b08e27884eb9bf28a2fe66703170ba4096024f96 (branch1)
+Author: bojana196130 <bojana.jovanovska@students.finki.ukim.mk>
+Date:   Sat Apr 2 19:54:54 2022 +0200
+
+    Add quantities to the items
+
+commit 5156ab7aa96dd534874993521b55931d921d52cb
+Author: bojana196130 <bojana.jovanovska@students.finki.ukim.mk>
+Date:   Sat Apr 2 19:51:18 2022 +0200
+
+    Add 5 items to the shopping list
